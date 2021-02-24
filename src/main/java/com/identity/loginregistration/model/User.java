@@ -9,6 +9,7 @@ import java.util.Collection;
 @NoArgsConstructor
 @Builder
 @Getter
+
 @Setter
 @Entity
 @Table(name="users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
