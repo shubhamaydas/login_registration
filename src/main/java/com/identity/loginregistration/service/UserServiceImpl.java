@@ -41,8 +41,8 @@ public class UserServiceImpl implements UserService {
         if(user==null){
             throw new UsernameNotFoundException("Invalid Username or Password");
         }
-
-        return org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), mapRolesToAuthority(user.getRoles()));
+    return new org.springframework.security.core.userdetails.User(
+            user.getEmail(), user.getPassword(), mapRolesToAuthority(user.getRoles()));
     }
 
     private Collection<? extends GrantedAuthority> mapRolesToAuthority(Collection<Role> roles){
